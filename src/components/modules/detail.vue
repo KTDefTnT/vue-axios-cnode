@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="reply-content" v-if="!loading">
+    <div class="reply-container" v-if="!loading">
       <div class="header">
         回复
       </div>
@@ -219,13 +219,14 @@ export default {
         }
       }
       .reply-content {
+        width: 97%;
         margin-top: -10px;
         margin-left: 45px;
         float: left;
       }
     }
   }
-  .reply-content {
+  .reply-container {
     width: 100%;
     margin: 0px auto;
     position: relative;
@@ -328,6 +329,7 @@ export default {
       padding: 4px 6px;
     }
     .prettyprint {
+      width: 98%;
       font-size: 14px;
       border-radius: 2px;
       padding: 5px 15px;
