@@ -25,9 +25,13 @@ export default {
     listContent
   },
   watch: {
+    // 切换不同的参数使用同一个路由，路由的params不会传值，解决的方法:
+    // 1、将传值的参数改为query
+    // 2、使用this.$router.push({path: '/path/${id}'});进行传值
     '$route' (to, from) {
       this.datas = [];
-      this.getContent(this.$route.params.type, 1);
+      this.type = to.query.type ? to.query.type : 'good';
+      this.getContent(this.$route.query.type, 1);
     }
   },
   methods: {
@@ -56,8 +60,7 @@ export default {
     }
   },
   created () {
-    this.type = this.$route.params.type ? this.$route.params.type : 'good';
-    console.log(this.type);
+    this.type = this.$route.query.type ? this.$route.query.type : 'good';
     this.getContent(this.type);
   }
 };
