@@ -23,14 +23,14 @@ export default {
   },
   methods: {
     handleClick () {
-      // let obj = {};
-      // this.$set(obj, 'type', this.type);
-      this.$router.push({path: `/cnode/content/${this.type}`});
-      // this.$router.push({name: 'demo.cnode.content', params: obj});
+      let obj = {};
+      this.$set(obj, 'type', this.type);
+      // this.$router.push({path: `/cnode/content/${this.type}`});
+      this.$router.push({name: 'demo.cnode.content', query: obj});
       // console.log(obj);
     }
   },
-  mounted () {
+  created () {
     this.handleClick();
   }
 };
