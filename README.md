@@ -1,6 +1,6 @@
 # cnode
 
-> 切换不同参数跳转同一个路由处理方法
+> 切换不同参数跳转同一个路由处理方法  
 地址： https://juejin.im/post/5ae96c69f265da0b93481e5d
 
 > A Vue.js project
