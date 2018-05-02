@@ -3,6 +3,8 @@
 > 切换不同参数跳转同一个路由处理方法  
 地址： https://juejin.im/post/5ae96c69f265da0b93481e5d
 
+部署成功的github pages地址： https://ktdeftnt.github.io/vue-axios-cnode/#/cnode/content?type=good
+
 > A Vue.js project
 
 ## Build Setup
