@@ -4,12 +4,12 @@ export default [
     desc: '',
     path: '',
     name: 'demo',
-    redirect: '/cnode/content/good',
+    // redirect: '/cnode/content/good',
     component (resolve) {
       // require(['components/modules/governor/main.vue'], resolve);
       require.ensure([], () => resolve(require('components/main.vue')), 'demo');
     },
-    meta: {requiresAuth: true, dynamicMenus: true},
+    // meta: {requiresAuth: true, dynamicMenus: true},
     children: [
       {
         desc: '业务模块',
@@ -20,9 +20,17 @@ export default [
           require.ensure([], () => resolve(require('components/layout.vue')), 'demo.cnode');
         },
         children: [
+          // {
+          //   desc: '精华',
+          //   path: 'content/:type',
+          //   name: 'demo.cnode.content',
+          //   component (resolve) {
+          //     require.ensure([], () => resolve(require('components/modules/content.vue')), 'demo.cnode.content');
+          //   }
+          // },
           {
             desc: '精华',
-            path: 'content/:type',
+            path: 'content',
             name: 'demo.cnode.content',
             component (resolve) {
               require.ensure([], () => resolve(require('components/modules/content.vue')), 'demo.cnode.content');
@@ -37,7 +45,7 @@ export default [
             }
           },
           {
-            desc: '详情',
+            desc: '用户信息',
             path: 'userInfo',
             name: 'demo.cnode.userInfo',
             component (resolve) {
@@ -45,7 +53,7 @@ export default [
             }
           },
           {
-            desc: '详情',
+            desc: '新增主题',
             path: 'addTopic',
             name: 'demo.cnode.addTopic',
             component (resolve) {
