@@ -19,7 +19,7 @@
       <div v-for="(item, index) in data.replies" :key="item.id">
         <div class="reply-list">
           <div class="reply-top">
-            <img :src="item.author.avatar_url" >
+            <img :src="item.author.avatar_url" @click="showUser(item.author.loginname)">
             <div class="reply-info">
               <span class="reply-name">{{item.author.loginname}}</span>
               <span>{{index + 1}}楼 • {{item.create_at | date(true)}}</span>
@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="reply-content">
+    <div class="reply-content" v-if="!loading">
       <div class="header">
         回复
       </div>
@@ -59,10 +59,13 @@ export default {
         accesstoken: '394686ea-c88a-4e05-80c1-ef425d6ada02'
       },
       topic_id: '',
-      loading: false
+      loading: true
     };
   },
   methods: {
+    showUser (loginname) {
+      this.$router.push({name: 'demo.cnode.userInfo', params: {loginname: loginname}});
+    },
     replyUpDown (item) {
       if (item.reply_id) {
         this.$api.mock.cnode.giveGood(item.reply_id).then(ret => {
@@ -188,6 +191,7 @@ export default {
         img {
           width: 30px;
           height: 30px;
+          cursor: pointer;
           float: left;
           margin-right: 15px;
           border-radius: 2px;
