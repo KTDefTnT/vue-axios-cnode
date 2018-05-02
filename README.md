@@ -5,6 +5,8 @@
 
 部署成功的github pages地址： https://ktdeftnt.github.io/vue-axios-cnode/#/cnode/content?type=good
 
+vue项目部署的步骤： https://segmentfault.com/a/1190000008425992
+
 > A Vue.js project
 
 ## Build Setup
