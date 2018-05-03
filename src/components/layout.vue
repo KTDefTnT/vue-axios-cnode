@@ -51,6 +51,7 @@ export default {
         font-size: 40px;
         line-height: 50px;
         word-wrap: break-word;
+        text-shadow:3px 3px 1px #ccc;
       }
     }
   }
