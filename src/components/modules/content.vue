@@ -48,10 +48,6 @@ export default {
       this.$api.mock.cnode.getTopics(obj).then(ret => {
         if (ret) {
           this.datas = [...this.datas, ...ret];
-          // console.log(this.datas);
-          // for (let i = 0; i < data.length; i++) {
-          //   this.$set(this.datas, i, data[i]);
-          // }
         } else {
           this.showLoad = false;
         }
