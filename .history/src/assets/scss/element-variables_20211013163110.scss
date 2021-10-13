@@ -1,0 +1,13 @@
+@import "variables";
+/* 改变主题色变量 */
+$--color-primary: $primary-color;
+// $--border-radius-base: $border-radius;
+// $--color-success: $success-color !default;
+// $--color-warning: $warning-color !default;
+// $--color-danger:  $danger-color !default;
+// $--color-info: #878d99 !default;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '../../../node_modules/element-ui/lib/theme-chalk/fonts';
+
+@import "../../../node_modules/element-ui/packages/theme-chalk/src/index";
