@@ -1,0 +1,24 @@
+
+.iconfont {
+  font-family: "iconfont" !important;
+  /*font-size:16px;*/
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+  content: "\e7ab";
+}
+
+.icon-dianzan1:before {
+  content: "\e615";
+}
+
+.icon-more:before {
+  content: "\e617";
+}
+
+.icon-dianzan:before {
+  content: "\e643";
+}

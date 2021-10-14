@@ -25,7 +25,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(c|le|sc)ss$/,
         use: ['css-loader', 'postcss-loader', {
           loader: 'sass-loader',
           options: {
@@ -33,10 +33,10 @@ module.exports = {
           }
         }]
       },
-      {
-        test: /\.css$/,
-        use: ['css-loader', 'postcss-loader']
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: ['css-loader', 'postcss-loader']
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',

@@ -25,17 +25,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(css|less|scss)$/,
         use: ['css-loader', 'postcss-loader', {
           loader: 'sass-loader',
           options: {
             indentedSyntax: true
           }
         }]
-      },
-      {
-        test: /\.css$/,
-        use: ['css-loader', 'postcss-loader']
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

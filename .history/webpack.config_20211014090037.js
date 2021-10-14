@@ -1,20 +1,13 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 module.exports = {
   entry: path.resolve(__dirname, './src/main.js'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name]-[hash:8].js',
-    publicPath: '/'
+    path: path.resolve(__dirname, './src/dist'),
   },
   mode: 'production',
-  performance: {
-    maxAssetSize: 10000000,
-    maxEntrypointSize: 100000000,
-    hints: false
-  },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
@@ -25,17 +18,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(css|less|scss)$/,
         use: ['css-loader', 'postcss-loader', {
           loader: 'sass-loader',
           options: {
             indentedSyntax: true
           }
         }]
-      },
-      {
-        test: /\.css$/,
-        use: ['css-loader', 'postcss-loader']
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -55,15 +44,15 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
       }
-      // {
-      //   test: /\.js$/,
-      //   loader: 'babel-loader'
-      // }
     ]
   },
   plugins: [
-    // new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './index.html'),
       filename: 'index.html'
