@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -26,7 +27,7 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: ['css-loader', 'postcss-loader', {
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', {
           loader: 'sass-loader',
           options: {
             indentedSyntax: true
@@ -35,7 +36,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['css-loader', 'postcss-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -56,14 +57,14 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader'
       }
-      // {
-      //   test: /\.js$/,
-      //   loader: 'babel-loader'
-      // }
     ]
   },
   plugins: [
-    // new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name]-[contenthash:8].css',
+      chunkFilename: 'css/[id].[hash].css'
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './index.html'),
       filename: 'index.html'
