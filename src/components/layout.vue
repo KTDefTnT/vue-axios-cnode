@@ -7,7 +7,8 @@
       <div class="right-content">
         <el-button type="primary" size="medium" style="margin-top: 35px;" @click="addTopic">新建主题</el-button>
         <div class="girl">
-          一个快乐的小仙女
+          webpack
+          <!-- 一个快乐的小仙女/ -->
         </div>
       </div>
     </div>
